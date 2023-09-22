@@ -18,7 +18,6 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"time"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
@@ -36,9 +35,9 @@ type AccessTokenSpec struct {
 type AccessTokenStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
-	SyncTime        time.Time `json:"syncTime,omitempty"`
-	SyncStatus      string    `json:"syncStatus,omitempty"`
-	FailedSyncCount int       `json:"failedSyncCount"`
+	SyncTime        string `json:"syncTime,omitempty"`
+	SyncStatus      string `json:"syncStatus,omitempty"`
+	FailedSyncCount int    `json:"failedSyncCount,omitempty"`
 }
 
 //+kubebuilder:object:root=true
