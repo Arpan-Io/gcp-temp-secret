@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- gcpsecret_v1alpha1_accesstoken.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
