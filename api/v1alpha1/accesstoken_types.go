@@ -18,6 +18,7 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"time"
 )
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
@@ -25,17 +26,19 @@ import (
 
 // AccessTokenSpec defines the desired state of AccessToken
 type AccessTokenSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of AccessToken. Edit accesstoken_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Namespace        string `json:"namespace,omitempty"`
+	WiServiceAccount string `json:"wiServiceAccount,omitempty"`
+	TargetName       string `json:"targetName,omitempty"`
+	TargetNamespace  string `json:"targetNamespace,omitempty"`
 }
 
 // AccessTokenStatus defines the observed state of AccessToken
 type AccessTokenStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	SyncTime        time.Time `json:"syncTime,omitempty"`
+	SyncStatus      string    `json:"syncStatus,omitempty"`
+	FailedSyncCount int       `json:"failedSyncCount"`
 }
 
 //+kubebuilder:object:root=true
